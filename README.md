@@ -73,9 +73,9 @@ Here’s our agenda:
     *   Key configuration options (`NodePool`, `EC2NodeClass` / `NodeClaim` CRDs):
         *   Defining `NodePool` CRDs to specify node constraints (instance types, zones, capacity types like spot/on-demand, taints, labels, resource limits).
         *   Using provider-specific CRDs (e.g., `EC2NodeClass` for AWS) for configurations like AMIs, user data, security groups, IAM instance profiles, and block device mappings.
-        *   Setting appropriate `ttlSecondsUntilExpired`, `ttlSecondsAfterEmpty`, and consolidation policies to manage node lifecycle and costs effectively.
+        *   Setting appropriate `expireAfter`, `consolidateAfter`, and consolidation policies to manage node lifecycle and costs effectively.
     *   Monitoring and observability:
-        *   Key metrics exposed by Karpenter via Prometheus endpoint (e.g., `karpenter_nodes_created`, `karpenter_pods_pending`, `karpenter_deprovisioning_actions_performed`).
+        *   Key metrics exposed by Karpenter via Prometheus endpoint (e.g., `karpenter_nodes_created`, `karpenter_pods_state`, `karpenter_interruption_received_messages_total`).
         *   Integrating with Prometheus and Grafana for dashboards to visualize Karpenter's behavior, node states, and cost impact.
         *   Analyzing Karpenter controller logs for detailed insights into decision-making processes and troubleshooting.
 *   **Q&A**
