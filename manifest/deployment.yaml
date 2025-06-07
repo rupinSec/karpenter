@@ -25,3 +25,9 @@ spec:
             cpu: 1
         securityContext:
           allowPrivilegeEscalation: false
+      tolerations:
+        - effect: NoSchedule
+          key: dedicated
+          value: test
+      nodeSelector:
+        purpose: test
