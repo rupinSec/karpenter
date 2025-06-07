@@ -1,10 +1,17 @@
 apiVersion: karpenter.sh/v1
 kind: NodePool
 metadata:
-  name: default
+  name: demo-nodepool
 spec:
   template:
+    metadata:
+      labels:
+        purpose: test
     spec:
+      taints:
+        - effect: NoSchedule
+          key: dedicated
+          value: test
       requirements:
         - key: kubernetes.io/arch
           operator: In
